@@ -38,7 +38,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 juga meningkatkan pengalaman pada bisnis Anda.
               </p>
               <a
-                href="<?php the_field('cta_janjian_link'); ?>"
+                href="https://calendly.com/satriahrh/talk"
                 className="block w-fit bg-white border border-b-2 border-r-2 border-black drop-shadow text-black font-semibold text-sm md:text-base p-2 md:px-4 md:py-2 hover:from-slate-100 hover:to-red-100"
               >
                 Janjian Konsultasi
@@ -158,7 +158,7 @@ const IndexPage: React.FC<PageProps> = () => {
             <div className="my-16 text-center grid sm:grid-cols-2 border-l border-t border-r-4 border-b-4 border-slate-500">
     <div className="text-left p-8 bg-red-50">
       <p className="text-4xl font-bold mb-4">Belum yakin dengan kebutuhan Anda?</p>
-      <a href="<?php the_field('cta_janjian_link'); ?>" className="block w-fit bg-white border border-b-2 border-r-2 border-black drop-shadow text-black font-semibold text-sm md:text-base p-2 md:px-4 md:py-2 hover:from-slate-100 hover:to-red-100">
+      <a href="https://calendly.com/satriahrh/talk" className="block w-fit bg-white border border-b-2 border-r-2 border-black drop-shadow text-black font-semibold text-sm md:text-base p-2 md:px-4 md:py-2 hover:from-slate-100 hover:to-red-100">
         Janjian Konsultasi Gratis
       </a>
     </div>
