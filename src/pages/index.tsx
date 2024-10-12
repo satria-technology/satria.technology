@@ -156,28 +156,35 @@ const IndexPage: React.FC<PageProps> = () => {
             </div>
 
             <div className="my-16 text-center grid sm:grid-cols-2 border-l border-t border-r-4 border-b-4 border-slate-500">
-    <div className="text-left p-8 bg-red-50">
-      <p className="text-4xl font-bold mb-4">Belum yakin dengan kebutuhan Anda?</p>
-      <a href="https://calendly.com/satriahrh/talk" className="block w-fit bg-white border border-b-2 border-r-2 border-black drop-shadow text-black font-semibold text-sm md:text-base p-2 md:px-4 md:py-2 hover:from-slate-100 hover:to-red-100">
-        Janjian Konsultasi Gratis
-      </a>
-    </div>
-    <div className="text-left p-8 bg-red-600 text-white">
-      <p className="font-bold text-lg">PT Satria Teknologi Studio</p>
-      <div className="mt-2 text-md">
-        Kaliduren 2
-        Moyudan, Kab Sleman
-        Prov Daerah Istimewa Yogyakarta 55563
-      </div>
-      <p className="mt-2 text-md">t: +62 851 6262 xxxx</p>
-      <p className="mt-2 text-md">e: info@satria.technology</p>
-      <a href="#" className="mt-4 block w-fit bg-white border border-r-2 border-b-2 border-black drop-shadow text-black font-semibold text-sm md:text-base p-2 md:px-4 md:py-2 hover:from-slate-100 hover:to-red-100">
-        Lihat Profil Perusahaan
-      </a>
-    </div>
-  </div>
+              <div className="text-left p-8 bg-red-50">
+                <p className="text-4xl font-bold mb-4">
+                  Belum yakin dengan kebutuhan Anda?
+                </p>
+                <a
+                  href="https://calendly.com/satriahrh/talk"
+                  className="block w-fit bg-white border border-b-2 border-r-2 border-black drop-shadow text-black font-semibold text-sm md:text-base p-2 md:px-4 md:py-2 hover:from-slate-100 hover:to-red-100"
+                >
+                  Janjian Konsultasi Gratis
+                </a>
+              </div>
+              <div className="text-left p-8 bg-red-600 text-white">
+                <p className="font-bold text-lg">PT Satria Teknologi Studio</p>
+                <div className="mt-2 text-md">
+                  Kaliduren 2 Moyudan, Kab Sleman Prov Daerah Istimewa
+                  Yogyakarta 55563
+                </div>
+                <p className="mt-2 text-md">t: +62 851 6262 xxxx</p>
+                <p className="mt-2 text-md">e: info@satria.technology</p>
+                <a
+                  href="#"
+                  className="mt-4 block w-fit bg-white border border-r-2 border-b-2 border-black drop-shadow text-black font-semibold text-sm md:text-base p-2 md:px-4 md:py-2 hover:from-slate-100 hover:to-red-100"
+                >
+                  Lihat Profil Perusahaan
+                </a>
+              </div>
+            </div>
 
- {/* <div className="my-16">
+            {/* <div className="my-16">
    <h2 className="text-center text-4xl font-bold">Temukan Inspirasi Baru dari Blog Kami</h2>
 
    <div className="post-listing mt-4">
@@ -320,4 +327,6 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Home Page</title>;
+export const Head: HeadFC = () => (
+  <title>Satria Technology - Profit Amplified Experience Elevated</title>
+);
