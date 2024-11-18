@@ -1,6 +1,41 @@
 import * as React from "react";
 import type { HeadFC, PageProps } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
+import { TypeAnimation } from "react-type-animation";
+
+const keywords = [
+  "Go",
+  "Ruby",
+  "JavaScript",
+  "Python",
+  "Java",
+  "Sinatra",
+  "Active Record",
+  "MySQL",
+  "MariaDB",
+  "Redis",
+  "RabbitMQ",
+  "Kafka",
+  "NSQ",
+  "Google Pub Sub",
+  "AWS",
+  "GCP",
+  "Azure",
+  "ELK Stack",
+  "Datadog",
+  "Grafana",
+  "Next.js",
+  "TypeScript",
+  "AppSmith",
+  "Google Cloud Platform",
+  "Amazon Web Service",
+  "Kubernetes",
+  "LLM",
+  "Gen AI",
+  "Blockchain",
+  "FinTech",
+  "Payment Processing",
+];
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -10,10 +45,7 @@ const IndexPage: React.FC<PageProps> = () => {
           <div className="lg:flex lg:justify-between lg:items-center py-6">
             <div className="flex justify-between items-center">
               <div>
-                <a
-                  href="<?php echo get_bloginfo( 'url' ); ?>"
-                  className="font-extrabold text-lg uppercase"
-                >
+                <a href="/" className="font-extrabold text-lg uppercase">
                   Satria.Technology
                 </a>
               </div>
@@ -29,19 +61,32 @@ const IndexPage: React.FC<PageProps> = () => {
 						border-4 sm:border-none border-b-slate-500 border-r-slate-500 border-t-slate-50 border-l-slate-50
 						-bottom-28 sm:bottom-0 p-3 sm:p-0 space-y-3"
             >
-              <p className="text-lg md:text-4xl font-semibold sm:font-bold">
-                Profit Amplified, Experience Elevated: Consulting-First Software
-                Solutions.
+              <p className="text-lg md:text-4xl">
+                This is{" "}
+                <span className="font-semibold sm:font-bold">Satria</span>.
               </p>
-              <p className="pl-2 text-xs md:text-sm font-light text-slate-500 ">
-                Konsultan Teknologi IT, membantu memperbesar profit Anda dan
-                juga meningkatkan pengalaman pada bisnis Anda.
-              </p>
+              <TypeAnimation
+                preRenderFirstString={true}
+                wrapper="p"
+                repeat={Infinity}
+                speed={70}
+                className="text-lg md:text-4xl font-semibold sm:font-bold"
+                sequence={[
+                  "I'm a Software Engineer",
+                  1000,
+                  "I'm a Tech Leader",
+                  1000,
+                  "Business Oriented",
+                  1000,
+                  "Product Engineer",
+                  1000,
+                ]}
+              />
               <a
                 href="https://calendly.com/satriahrh/talk"
                 className="block w-fit bg-white border border-b-2 border-r-2 border-black drop-shadow text-black font-semibold text-sm md:text-base p-2 md:px-4 md:py-2 hover:from-slate-100 hover:to-red-100"
               >
-                Janjian Konsultasi
+                Let's Talk
               </a>
             </div>
             <StaticImage
@@ -55,36 +100,17 @@ const IndexPage: React.FC<PageProps> = () => {
           <div className="container max-w-screen-xl mx-auto my-8 px-3">
             <div className="my-16">
               <h2 className="text-center text-4xl font-bold mb-8">
-                Kolaborasi untuk pencapaian terbaik bisnis Anda
+                Collaboration and Technical Excelence to Deliver Business Value
               </h2>
               <div className="flex flex-row flex-wrap justify-center gap-2 sm:gap-4">
-                <span className="bg-red-200 text-red-700 rounded-full px-3 py-1 text-sm font-semibold">
-                  AI
-                </span>
-                <span className="bg-red-200 text-red-700 rounded-full px-3 py-1 text-sm font-semibold">
-                  Web App
-                </span>
-                <span className="bg-red-200 text-red-700 rounded-full px-3 py-1 text-sm font-semibold">
-                  Android
-                </span>
-                <span className="bg-red-200 text-red-700 rounded-full px-3 py-1 text-sm font-semibold">
-                  iOS
-                </span>
-                <span className="bg-red-200 text-red-700 rounded-full px-3 py-1 text-sm font-semibold">
-                  NFT
-                </span>
-                <span className="bg-red-200 text-red-700 rounded-full px-3 py-1 text-sm font-semibold">
-                  Machine Learning
-                </span>
-                <span className="bg-red-200 text-red-700 rounded-full px-3 py-1 text-sm font-semibold">
-                  Cryptocurrency
-                </span>
-                <span className="bg-red-200 text-red-700 rounded-full px-3 py-1 text-sm font-semibold">
-                  gen-AI
-                </span>
-                <span className="bg-red-200 text-red-700 rounded-full px-3 py-1 text-sm font-semibold">
-                  Payment Processing UI/UX
-                </span>
+                {keywords.map((keyword) => (
+                  <span
+                    key={keyword}
+                    className="bg-red-200 text-red-700 rounded-full px-3 py-1 text-sm font-semibold"
+                  >
+                    {keyword}
+                  </span>
+                ))}
               </div>
               <div className="text-center">
                 <StaticImage
@@ -217,24 +243,6 @@ const IndexPage: React.FC<PageProps> = () => {
                   Hero image by pressfoto
                 </a>
               </span>
-              ,
-              <span>
-                <a href="https://www.freepik.com/free-photo/i-have-idea_5766155.htm">
-                  Tech Consultation image by pressfoto
-                </a>
-              </span>
-              ,
-              <span>
-                <a href="https://www.freepik.com/free-photo/discussing-mobile-app_5698277.htm">
-                  Product Development image by pressfoto
-                </a>
-              </span>
-              ,
-              <span>
-                <a href="https://www.freepik.com/free-photo/business-executives-reading-sticky-notes_1005802.htm">
-                  Software Development image by peoplecreations
-                </a>
-              </span>
               , on Freepik
             </div>
           </div>
@@ -274,7 +282,7 @@ const IndexPage: React.FC<PageProps> = () => {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 448 512"
                 >
-                  <path d="M194.4 211.7a53.3 53.3 0 1 0 59.3 88.7 53.3 53.3 0 1 0 -59.3-88.7zm142.3-68.4c-5.2-5.2-11.5-9.3-18.4-12c-18.1-7.1-57.6-6.8-83.1-6.5c-4.1 0-7.9 .1-11.2 .1c-3.3 0-7.2 0-11.4-.1c-25.5-.3-64.8-.7-82.9 6.5c-6.9 2.7-13.1 6.8-18.4 12s-9.3 11.5-12 18.4c-7.1 18.1-6.7 57.7-6.5 83.2c0 4.1 .1 7.9 .1 11.1s0 7-.1 11.1c-.2 25.5-.6 65.1 6.5 83.2c2.7 6.9 6.8 13.1 12 18.4s11.5 9.3 18.4 12c18.1 7.1 57.6 6.8 83.1 6.5c4.1 0 7.9-.1 11.2-.1c3.3 0 7.2 0 11.4 .1c25.5 .3 64.8 .7 82.9-6.5c6.9-2.7 13.1-6.8 18.4-12s9.3-11.5 12-18.4c7.2-18 6.8-57.4 6.5-83c0-4.2-.1-8.1-.1-11.4s0-7.1 .1-11.4c.3-25.5 .7-64.9-6.5-83l0 0c-2.7-6.9-6.8-13.1-12-18.4zm-67.1 44.5A82 82 0 1 1 178.4 324.2a82 82 0 1 1 91.1-136.4zm29.2-1.3c-3.1-2.1-5.6-5.1-7.1-8.6s-1.8-7.3-1.1-11.1s2.6-7.1 5.2-9.8s6.1-4.5 9.8-5.2s7.6-.4 11.1 1.1s6.5 3.9 8.6 7s3.2 6.8 3.2 10.6c0 2.5-.5 5-1.4 7.3s-2.4 4.4-4.1 6.2s-3.9 3.2-6.2 4.2s-4.8 1.5-7.3 1.5l0 0c-3.8 0-7.5-1.1-10.6-3.2zM448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM357 389c-18.7 18.7-41.4 24.6-67 25.9c-26.4 1.5-105.6 1.5-132 0c-25.6-1.3-48.3-7.2-67-25.9s-24.6-41.4-25.8-67c-1.5-26.4-1.5-105.6 0-132c1.3-25.6 7.1-48.3 25.8-67s41.5-24.6 67-25.8c26.4-1.5 105.6-1.5 132 0c25.6 1.3 48.3 7.1 67 25.8s24.6 41.4 25.8 67c1.5 26.3 1.5 105.4 0 131.9c-1.3 25.6-7.1 48.3-25.8 67z" />
+                  <path d="M194.4 211.7a53.3 53.3 0 1 0 59.3 88.7 53.3 53.3 0 1 0 -59.3-88.7zm142.3-68.4c-5.2-5.2-11.5-9.3-18.4-12c-18.1-7.1-57.6-6.8-83.1-6.5c-4.1 0-7.9 .1-11.2 .1c-3.3 0-7.2 0-11.4-.1c-25.5-.3-64.8-.7-82.9 6.5c-6.9 2.7-13.1 6.8-18.4 12s-9.3 11.5-12 18.4c-7.1 18.1-6.7 57.7-6.5 83.2c0 4.1 .1 7.9 .1 11.1s0 7-.1 11.1c-.2 25.5-.6 65.1 6.5 83.2c2.7 6.9 6.8 13.1 12 18.4s11.5 9.3 18.4 12c18.1 7.1 57.6 6.8 83.1 6.5c4.1 0 7.9-.1 11.2-.1c3.3 0 7.2 0 11.4 .1c25.5 .3 64.8 .7 82.9-6.5c6.9-2.7 13.1-6.8 18.4-12s9.3-11.5 12-18.4c7.2-18 6.8-57.4 6.5-83c0-4.2-.1-8.1-.1-11.4s0-7.1 .1-11.4c.3-25.5 .7-64.9-6.5-83l0 0c-2.7-6.9-6.8-13.1-12-18.4zm-67.1 44.5A82 82 0 1 1 178.4 324.2a82 82 0 1 1 91.1-136.4zm29.2-1.3c-3.1-2.1-5.6-5.1-7.1-8.6s-1.8-7.3-1.1-11.1s2.6-7.1 5.2-9.8s6.1-4.5 9.8-5.2s7.6-.4 11.1 1.1s6.5 3.9 8.6 7s3.2 6.8 3.2 10.6c0 2.5-.5 5-1.4 7.3s-2.4 4.4-4.1 6.2s-3.9 3.2-6.2 4.2s-4.8 1.5-7.3 1.5l0 0c-3.8 0-7.5-1.1-10.6-3.2zM448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H384c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM357 389c-18.7 18.7-41.4 24.6-67 25.9c-26.4 1.5-105.6 1.5-132 0c-25.6-1.3-48.3-7.2-67-25.9s-24.6-41.4-25.8-67c-1.5-26.4-1.5-105.6 0-132c1.3-25.6 7.1-48.3 25.8-67s41.5-24.6 67-25.8c26.4-1.5 105.6-1.5 132 0c25.6 1.3 48.3 7.1 67 25.8s24.6 41.4 25.8 67c1.5 26.3 1.5 105.4 0 131.9c-1.3 25.6-7.1 48.3-25.8 67z" />
                 </svg>
               </a>
               <a
