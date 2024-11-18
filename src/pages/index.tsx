@@ -46,7 +46,7 @@ const IndexPage: React.FC<PageProps> = () => {
             <div className="flex justify-between items-center">
               <div>
                 <a href="/" className="font-extrabold text-lg uppercase">
-                  Satria.Technology
+                  satria.technology
                 </a>
               </div>
             </div>
@@ -86,7 +86,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 href="https://calendly.com/satriahrh/talk"
                 className="block w-fit bg-white border border-b-2 border-r-2 border-black drop-shadow text-black font-semibold text-sm md:text-base p-2 md:px-4 md:py-2 hover:from-slate-100 hover:to-red-100"
               >
-                Let's Talk
+                Let's talk
               </a>
             </div>
             <StaticImage
@@ -183,29 +183,37 @@ const IndexPage: React.FC<PageProps> = () => {
 
             <div className="my-16 text-center grid sm:grid-cols-2 border-l border-t border-r-4 border-b-4 border-slate-500">
               <div className="text-left p-8 bg-red-50">
-                <p className="text-4xl font-bold mb-4">
-                  Belum yakin dengan kebutuhan Anda?
-                </p>
+                <TypeAnimation
+                preRenderFirstString={true}
+                wrapper="p"
+                repeat={Infinity}
+                speed={70}
+                className="text-4xl font-bold mb-4"
+                sequence={[
+                  "Interested in my profile?",
+                  1000,
+                  "Need a tech expert?",
+                  1000,
+                  "Catch up and reconnect?",
+                  1000,
+                ]}
+              />
                 <a
                   href="https://calendly.com/satriahrh/talk"
                   className="block w-fit bg-white border border-b-2 border-r-2 border-black drop-shadow text-black font-semibold text-sm md:text-base p-2 md:px-4 md:py-2 hover:from-slate-100 hover:to-red-100"
                 >
-                  Janjian Konsultasi Gratis
+                  Let's talk
                 </a>
               </div>
               <div className="text-left p-8 bg-red-600 text-white">
-                <p className="font-bold text-lg">PT Satria Teknologi Studio</p>
-                <div className="mt-2 text-md">
-                  Kaliduren 2 Moyudan, Kab Sleman Prov Daerah Istimewa
-                  Yogyakarta 55563
-                </div>
+                <p className="font-bold text-lg">Satria Hafizh Rizkitama Harsono</p>
                 <p className="mt-2 text-md">t: +62 851 6262 xxxx</p>
                 <p className="mt-2 text-md">e: info@satria.technology</p>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/satriahrh"
                   className="mt-4 block w-fit bg-white border border-r-2 border-b-2 border-black drop-shadow text-black font-semibold text-sm md:text-base p-2 md:px-4 md:py-2 hover:from-slate-100 hover:to-red-100"
                 >
-                  Lihat Profil Perusahaan
+                  Lihat Profil Linkedin
                 </a>
               </div>
             </div>
@@ -251,16 +259,12 @@ const IndexPage: React.FC<PageProps> = () => {
       <footer className="bg-slate-800 text-white py-12">
         <div className="container max-w-screen-lg mx-auto pb-4 mb-4 border-b border-white flex flex-col gap-6 sm:gap-0 sm:grid sm:grid-cols-3">
           <div>
-            <p className="text-md font-semibold sm:font-bold">
-              Satria Technology
-            </p>
             <p className="text-md mt-4">
-              Profit Amplified, Experience Elevated: Consulting-First Software
-              Solutions.
+              Collaboration and Technical Excelence to Deliver Business Value
             </p>
             <div className="flex flex-row gap-4 mt-4">
               <a
-                href="https://www.facebook.com/satria.technology"
+                href="https://www.facebook.com/satriahrh"
                 className="text-blue-600 hover:text-blue-800"
               >
                 <svg
@@ -273,7 +277,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 </svg>
               </a>
               <a
-                href="https://www.instagram.com/satria.technology"
+                href="https://www.instagram.com/satriahrh"
                 className="text-blue-400 hover:text-blue-600 text-2xl"
               >
                 <svg
@@ -286,7 +290,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 </svg>
               </a>
               <a
-                href="https://www.twitter.com/satria.technology"
+                href="https://www.twitter.com/satriahrh"
                 className="text-pink-600 hover:text-pink-800 text-2xl"
               >
                 <svg
@@ -299,7 +303,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 </svg>
               </a>
               <a
-                href="https://www.linkedin.com/in/satria.technology"
+                href="https://www.linkedin.com/in/satriahrh"
                 className="text-blue-700 hover:text-blue-900 text-2xl"
               >
                 <svg
@@ -315,18 +319,16 @@ const IndexPage: React.FC<PageProps> = () => {
           </div>
           <div>{/* pass */}</div>
           <div>
-            <p className="font-bold text-lg mb-2">PT Satria Teknologi Studio</p>
-            <div className="mt-2 text-sm">
-              Kaliduren 2 Moyudan, Kab Sleman Prov Daerah Istimewa Yogyakarta
-              55563
-            </div>
+            <p className="font-bold text-lg mb-2">
+              Satria Hafizh Rizkitama Harsono
+            </p>
             <p className="mt-2 text-sm">t: +62 851 6262 xxxx</p>
             <p className="mt-2 text-sm">e: info@satria.technology</p>
           </div>
         </div>
 
         <div className="container mx-auto text-center">
-          &copy; 2024 - Satria Technology
+          &copy; 2024 - satria.technology
         </div>
       </footer>
     </div>
@@ -336,5 +338,5 @@ const IndexPage: React.FC<PageProps> = () => {
 export default IndexPage;
 
 export const Head: HeadFC = () => (
-  <title>Satria Technology - Profit Amplified Experience Elevated</title>
+  <title>Satria H R Harsono - Software Engineer</title>
 );
