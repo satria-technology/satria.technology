@@ -41,7 +41,7 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <header className="bg-gradient-to-r from-slate-100 to-red-100">
-        <div className="mx-auto px-2 max-w-screen-lg container">
+        <div className="mx-auto px-8 max-w-screen-lg container">
           <div className="lg:flex lg:justify-between lg:items-center py-6">
             <div className="flex justify-between items-center">
               <div>
@@ -54,12 +54,12 @@ const IndexPage: React.FC<PageProps> = () => {
         </div>
       </header>
       <div>
-        <div className="bg-gradient-to-r from-slate-100 to-red-100 mb-40 sm:mb-32 sm:mb-0">
+        <div className="bg-gradient-to-r from-slate-100 to-red-100 mb-32 md:mb-0">
           <div className="max-w-screen-lg container mx-auto px-2 relative flex flex-col-reverse sm:items-center sm:grid sm:grid-cols-2 sm:gap-4">
             <div
-              className="absolute sm:relative bg-white sm:bg-transparent h-fit max-w-[90%] sm:max-w-[100%]
-						border-4 sm:border-none border-b-slate-500 border-r-slate-500 border-t-slate-50 border-l-slate-50
-						-bottom-28 sm:bottom-0 p-3 sm:p-0 space-y-8 z-10"
+              className="absolute sm:relative bg-white sm:bg-transparent h-fit
+						border-l-2 border-t-2 border-b-4 border-r-4 sm:border-none border-b-slate-500 border-r-slate-500
+						-bottom-28 sm:bottom-0 px-8 py-2 md:py-0 md:p-3 sm:p-0 space-y-8 z-10"
             >
               <div className="space-y-3">
                 <p className="text-2xl md:text-4xl">
@@ -71,7 +71,7 @@ const IndexPage: React.FC<PageProps> = () => {
                   wrapper="p"
                   repeat={Infinity}
                   speed={70}
-                  className="text-lg md:text-4xl font-semibold sm:font-bold"
+                  className="text-xl md:text-4xl font-semibold sm:font-bold"
                   sequence={[
                     "I'm a Software Engineer",
                     1000,
@@ -83,25 +83,35 @@ const IndexPage: React.FC<PageProps> = () => {
                     1000,
                   ]}
                 />
-                <a
-                  href="https://calendly.com/satriahrh/talk"
-                  className="block w-fit bg-white border border-b-2 border-r-2 border-black drop-shadow text-gray-800 font-semibold text-sm md:text-base p-2 md:px-4 md:py-2 hover:bg-gray-200"
-                >
-                  Let's talk
-                </a>
+                <div className="flex flex-row gap-4 flex-wrap">
+                  <a
+                    href="https://calendly.com/satriahrh/talk"
+                    className="block w-fit bg-white border border-b-2 border-r-2 border-black drop-shadow text-gray-800 font-semibold text-sm md:text-base p-2 md:px-4 md:py-2 hover:bg-gray-200"
+                  >
+                    Let's talk
+                  </a>
+                  <a
+                    href="https://blog.satria.technology"
+                    className="block w-fit bg-white border border-b-2 border-r-2 border-black drop-shadow text-gray-800 font-semibold text-sm md:text-base p-2 md:px-4 md:py-2 hover:bg-gray-200"
+                  >
+                    Check Blog & Discuss
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/satriahrh"
+                    className="block w-fit bg-white border border-b-2 border-r-2 border-black drop-shadow text-gray-800 font-semibold text-sm md:text-base p-2 md:px-4 md:py-2 hover:bg-gray-200"
+                  >
+                    Check Linkedin
+                  </a>
+                </div>
               </div>
 
-              <div className="">
-                <p className="text-gray-700 mb-2 text-lg">
-                  I help Junior Developer in navigating their career. Check my
-                  blog for insights.
-                </p>
-                <a
-                  href="https://blog.satria.technology"
-                  className="block w-fit bg-white border border-b-2 border-r-2 border-black drop-shadow text-gray-800 font-semibold text-sm md:text-base p-2 md:px-4 md:py-2 hover:bg-gray-200"
-                >
-                  Check Blog
-                </a>
+              <div className="text-xs text-slate-400">
+                <span>
+                  <a href="https://www.freepik.com/free-photo/asian-man-saying-good-job_6802044.htm">
+                    Hero image by pressfoto
+                  </a>
+                </span>
+                , on Freepik
               </div>
             </div>
             <StaticImage
@@ -113,20 +123,7 @@ const IndexPage: React.FC<PageProps> = () => {
         </div>
         <main>
           <div className="container max-w-screen-xl mx-auto my-8 px-3">
-            <div className="my-16">
-              <h2 className="text-center text-4xl font-bold mb-8">
-                Collaboration and Technical Excelence to Deliver Business Value
-              </h2>
-              <div className="flex flex-row flex-wrap justify-center gap-2 sm:gap-4">
-                {keywords.map((keyword) => (
-                  <span
-                    key={keyword}
-                    className="bg-red-200 text-red-700 rounded-full px-3 py-1 text-sm font-semibold"
-                  >
-                    {keyword}
-                  </span>
-                ))}
-              </div>
+            {/* <div className="my-16">
               <div className="text-center">
                 <StaticImage
                   src="../images/half-globe-down.png"
@@ -135,75 +132,16 @@ const IndexPage: React.FC<PageProps> = () => {
                   className="mx-auto"
                 />
               </div>
-            </div>
+            </div> */}
 
-            <div className="my-16">
-              <h2 className="text-center text-4xl font-bold mb-4">
-                Consultation-First Software Solution
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="bg-white border-l border-t border-r-4 border-b-4 border-slate-500 p-4">
-                  <StaticImage
-                    src="../images/i-have-idea.jpg"
-                    placeholder="blurred"
-                    alt="Stock Photo"
-                  />
-                  <h3 className="text-2xl font-bold mt-4 mb-2">
-                    Tech Consulting
-                  </h3>
-                  <p>
-                    Kami memberikan saran ahli untuk membantu Anda mengarungi
-                    dunia teknologi yang kompleks. Konsultan kami akan
-                    membimbing Anda dalam membuat keputusan yang terinformasi
-                    tentang solusi teknologi terbaik untuk memenuhi kebutuhan
-                    bisnis Anda, memastikan Anda tetap unggul di era digital.
-                  </p>
-                </div>
-                <div className="bg-white border-l border-t border-r-4 border-b-4 border-slate-500 p-4">
-                  <StaticImage
-                    src="../images/discussing-mobile-app.jpg"
-                    placeholder="blurred"
-                    alt="Stock Photo"
-                  />
-                  <h3 className="text-2xl font-bold mt-4 mb-2">
-                    Product Ideation
-                  </h3>
-                  <p>
-                    Kami mengubah ide-ide Anda menjadi kenyataan. Tim manajer
-                    produk dan desainer berpengalaman kami bekerja secara
-                    kolaboratif untuk membangun produk perangkat lunak inovatif
-                    dan berkualitas tinggi yang disesuaikan dengan kebutuhan
-                    bisnis Anda.
-                  </p>
-                </div>
-                <div className="bg-white border-l border-t border-r-4 border-b-4 border-slate-500 p-4">
-                  <StaticImage
-                    src="../images/business-executives-reading-sticky-notes.jpg"
-                    placeholder="blurred"
-                    alt="Stock Photo"
-                  />
-                  <h3 className="text-2xl font-bold mt-4 mb-2">
-                    Software Development
-                  </h3>
-                  <p>
-                    Kami ahli dalam menciptakan solusi perangkat lunak yang
-                    tangguh, dapat diukur, dan efisien. Tim pengembang terampil
-                    kami menggunakan teknologi terbaru dan praktik terbaik untuk
-                    menghasilkan aplikasi perangkat lunak kustom yang
-                    meningkatkan operasi bisnis dan mendorong pertumbuhan.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="my-16 text-center grid sm:grid-cols-2 border-l border-t border-r-4 border-b-4 border-slate-500">
-              <div className="text-left p-8 bg-red-50">
+            <div className="my-16 text-center grid sm:grid-cols-2 border-l-2 border-t-2 border-b-4 border-r-4 sm:border-none border-b-slate-500 border-r-slate-500">
+              <div className="text-left p-8 bg-red-50 space-y-4">
                 <TypeAnimation
                   preRenderFirstString={true}
                   wrapper="p"
                   repeat={Infinity}
                   speed={70}
-                  className="text-4xl font-bold mb-4"
+                  className="text-xl md:text-4xl font-bold"
                   sequence={[
                     "Interested in my profile?",
                     1000,
@@ -213,24 +151,30 @@ const IndexPage: React.FC<PageProps> = () => {
                     1000,
                   ]}
                 />
-                <a
-                  href="https://calendly.com/satriahrh/talk"
-                  className="block w-fit bg-white border border-b-2 border-r-2 border-black drop-shadow text-black font-semibold text-sm md:text-base p-2 md:px-4 md:py-2 hover:from-slate-100 hover:to-red-100"
-                >
-                  Let's talk
-                </a>
+                <div className="flex flex-row gap-4 flex-wrap">
+                  <a
+                    href="https://calendly.com/satriahrh/talk"
+                    className="block w-fit bg-white border border-b-2 border-r-2 border-black drop-shadow text-gray-800 font-semibold text-sm md:text-base p-2 md:px-4 md:py-2 hover:bg-gray-200"
+                  >
+                    Let's talk
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/satriahrh"
+                    className="block w-fit bg-white border border-b-2 border-r-2 border-black drop-shadow text-gray-800 font-semibold text-sm md:text-base p-2 md:px-4 md:py-2 hover:bg-gray-200"
+                  >
+                    Check Linkedin
+                  </a>
+                </div>
               </div>
-              <div className="text-left p-8 bg-red-600 text-white">
-                <p className="font-bold text-lg">
-                  Satria Hafizh Rizkitama Harsono
+              <div className="text-left p-8 bg-red-600 text-white space-y-4">
+                <p className="text-xl md:text-2xl lg:text-4xl font-bold">
+                  Helping Junior Developer in navigate their career.
                 </p>
-                <p className="mt-2 text-md">t: +62 851 6262 xxxx</p>
-                <p className="mt-2 text-md">e: info@satria.technology</p>
                 <a
-                  href="https://www.linkedin.com/in/satriahrh"
-                  className="mt-4 block w-fit bg-white border border-r-2 border-b-2 border-black drop-shadow text-black font-semibold text-sm md:text-base p-2 md:px-4 md:py-2 hover:from-slate-100 hover:to-red-100"
+                  href="https://blog.satria.technology"
+                  className="block w-fit bg-white border border-b-2 border-r-2 border-black drop-shadow text-gray-800 font-semibold text-sm md:text-base p-2 md:px-4 md:py-2 hover:bg-gray-200"
                 >
-                  Lihat Profil Linkedin
+                  Check Blog & Discuss
                 </a>
               </div>
             </div>
@@ -261,20 +205,11 @@ const IndexPage: React.FC<PageProps> = () => {
      ?>
    </div>
  </div> */}
-
-            <div className="text-xs text-center container mx-auto max-w-screen-lg text-slate-400">
-              <span>
-                <a href="https://www.freepik.com/free-photo/asian-man-saying-good-job_6802044.htm">
-                  Hero image by pressfoto
-                </a>
-              </span>
-              , on Freepik
-            </div>
           </div>
         </main>
       </div>
       <footer className="bg-slate-800 text-white py-12">
-        <div className="container max-w-screen-lg mx-auto pb-4 mb-4 border-b border-white flex flex-col gap-6 sm:gap-0 sm:grid sm:grid-cols-3">
+        <div className="container max-w-screen-lg mx-auto pb-4 px-8 lg:px-0 mb-4 border-b border-white flex flex-col gap-6 sm:gap-0 sm:grid sm:grid-cols-3">
           <div>
             <p className="text-md mt-4">
               Collaboration and Technical Excelence to Deliver Business Value
