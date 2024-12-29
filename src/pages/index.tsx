@@ -41,7 +41,7 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <header className="bg-gradient-to-r from-slate-100 to-red-100">
-        <div className="mx-auto max-w-screen-lg container">
+        <div className="mx-auto px-2 max-w-screen-lg container">
           <div className="lg:flex lg:justify-between lg:items-center py-6">
             <div className="flex justify-between items-center">
               <div>
@@ -55,39 +55,54 @@ const IndexPage: React.FC<PageProps> = () => {
       </header>
       <div>
         <div className="bg-gradient-to-r from-slate-100 to-red-100 mb-40 sm:mb-32 sm:mb-0">
-          <div className="max-w-screen-lg container mx-auto relative flex flex-col-reverse sm:items-center sm:grid sm:grid-cols-2 sm:gap-4">
+          <div className="max-w-screen-lg container mx-auto px-2 relative flex flex-col-reverse sm:items-center sm:grid sm:grid-cols-2 sm:gap-4">
             <div
               className="absolute sm:relative bg-white sm:bg-transparent h-fit max-w-[90%] sm:max-w-[100%]
 						border-4 sm:border-none border-b-slate-500 border-r-slate-500 border-t-slate-50 border-l-slate-50
-						-bottom-28 sm:bottom-0 p-3 sm:p-0 space-y-3"
+						-bottom-28 sm:bottom-0 p-3 sm:p-0 space-y-8 z-10"
             >
-              <p className="text-lg md:text-4xl">
-                This is{" "}
-                <span className="font-semibold sm:font-bold">Satria</span>.
-              </p>
-              <TypeAnimation
-                preRenderFirstString={true}
-                wrapper="p"
-                repeat={Infinity}
-                speed={70}
-                className="text-lg md:text-4xl font-semibold sm:font-bold"
-                sequence={[
-                  "I'm a Software Engineer",
-                  1000,
-                  "I'm a Tech Leader",
-                  1000,
-                  "Business Oriented",
-                  1000,
-                  "Product Engineer",
-                  1000,
-                ]}
-              />
-              <a
-                href="https://calendly.com/satriahrh/talk"
-                className="block w-fit bg-white border border-b-2 border-r-2 border-black drop-shadow text-black font-semibold text-sm md:text-base p-2 md:px-4 md:py-2 hover:from-slate-100 hover:to-red-100"
-              >
-                Let's talk
-              </a>
+              <div className="space-y-3">
+                <p className="text-2xl md:text-4xl">
+                  This is{" "}
+                  <span className="font-semibold sm:font-bold">Satria</span>.
+                </p>
+                <TypeAnimation
+                  preRenderFirstString={true}
+                  wrapper="p"
+                  repeat={Infinity}
+                  speed={70}
+                  className="text-lg md:text-4xl font-semibold sm:font-bold"
+                  sequence={[
+                    "I'm a Software Engineer",
+                    1000,
+                    "I'm a Tech Leader",
+                    1000,
+                    "Business Oriented",
+                    1000,
+                    "Product Engineer",
+                    1000,
+                  ]}
+                />
+                <a
+                  href="https://calendly.com/satriahrh/talk"
+                  className="block w-fit bg-white border border-b-2 border-r-2 border-black drop-shadow text-gray-800 font-semibold text-sm md:text-base p-2 md:px-4 md:py-2 hover:bg-gray-200"
+                >
+                  Let's talk
+                </a>
+              </div>
+
+              <div className="">
+                <p className="text-gray-700 mb-2 text-lg">
+                  I help Junior Developer in navigating their career. Check my
+                  blog for insights.
+                </p>
+                <a
+                  href="https://blog.satria.technology"
+                  className="block w-fit bg-white border border-b-2 border-r-2 border-black drop-shadow text-gray-800 font-semibold text-sm md:text-base p-2 md:px-4 md:py-2 hover:bg-gray-200"
+                >
+                  Check Blog
+                </a>
+              </div>
             </div>
             <StaticImage
               src="../images/asian-man-saying-good-job.webp"
@@ -184,20 +199,20 @@ const IndexPage: React.FC<PageProps> = () => {
             <div className="my-16 text-center grid sm:grid-cols-2 border-l border-t border-r-4 border-b-4 border-slate-500">
               <div className="text-left p-8 bg-red-50">
                 <TypeAnimation
-                preRenderFirstString={true}
-                wrapper="p"
-                repeat={Infinity}
-                speed={70}
-                className="text-4xl font-bold mb-4"
-                sequence={[
-                  "Interested in my profile?",
-                  1000,
-                  "Need a tech expert?",
-                  1000,
-                  "Catch up and reconnect?",
-                  1000,
-                ]}
-              />
+                  preRenderFirstString={true}
+                  wrapper="p"
+                  repeat={Infinity}
+                  speed={70}
+                  className="text-4xl font-bold mb-4"
+                  sequence={[
+                    "Interested in my profile?",
+                    1000,
+                    "Need a tech expert?",
+                    1000,
+                    "Catch up and reconnect?",
+                    1000,
+                  ]}
+                />
                 <a
                   href="https://calendly.com/satriahrh/talk"
                   className="block w-fit bg-white border border-b-2 border-r-2 border-black drop-shadow text-black font-semibold text-sm md:text-base p-2 md:px-4 md:py-2 hover:from-slate-100 hover:to-red-100"
@@ -206,7 +221,9 @@ const IndexPage: React.FC<PageProps> = () => {
                 </a>
               </div>
               <div className="text-left p-8 bg-red-600 text-white">
-                <p className="font-bold text-lg">Satria Hafizh Rizkitama Harsono</p>
+                <p className="font-bold text-lg">
+                  Satria Hafizh Rizkitama Harsono
+                </p>
                 <p className="mt-2 text-md">t: +62 851 6262 xxxx</p>
                 <p className="mt-2 text-md">e: info@satria.technology</p>
                 <a
