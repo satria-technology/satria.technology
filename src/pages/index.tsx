@@ -55,13 +55,13 @@ const IndexPage: React.FC<PageProps> = () => {
       </header>
       <div>
         <div className="bg-gradient-to-r from-slate-100 to-red-100 mb-32 md:mb-0">
-          <div className="max-w-screen-lg container mx-auto px-2 relative flex flex-col-reverse sm:items-center sm:grid sm:grid-cols-2 sm:gap-4">
+          <div className="max-w-screen-lg container mx-auto relative flex flex-col-reverse sm:items-center sm:grid sm:grid-cols-2 sm:gap-4">
             <div
               className="absolute sm:relative bg-white sm:bg-transparent h-fit
 						border-l-2 border-t-2 border-b-4 border-r-4 sm:border-none border-b-slate-500 border-r-slate-500
-						-bottom-28 sm:bottom-0 px-8 py-2 md:py-0 md:p-3 sm:p-0 space-y-8 z-10"
+						-bottom-28 sm:bottom-0 p-4 md:py-0 md:px-4 space-y-2 z-10"
             >
-              <div className="space-y-3">
+              <div className="space-y-2">
                 <p className="text-2xl md:text-4xl">
                   This is{" "}
                   <span className="font-semibold sm:font-bold">Satria</span>.
@@ -83,7 +83,7 @@ const IndexPage: React.FC<PageProps> = () => {
                     1000,
                   ]}
                 />
-                <div className="flex flex-row gap-4 flex-wrap">
+                <div className="flex flex-row gap-2 flex-wrap">
                   <a
                     href="https://calendly.com/satriahrh/talk"
                     className="block w-fit bg-white border border-b-2 border-r-2 border-black drop-shadow text-gray-800 font-semibold text-sm md:text-base p-2 md:px-4 md:py-2 hover:bg-gray-200"
@@ -122,7 +122,7 @@ const IndexPage: React.FC<PageProps> = () => {
           </div>
         </div>
         <main>
-          <div className="container max-w-screen-xl mx-auto my-8 px-3">
+          <div className="container max-w-screen-xl mx-auto my-12">
             {/* <div className="my-16">
               <div className="text-center">
                 <StaticImage
@@ -134,7 +134,7 @@ const IndexPage: React.FC<PageProps> = () => {
               </div>
             </div> */}
 
-            <div className="my-16 text-center grid sm:grid-cols-2 border-l-2 border-t-2 border-b-4 border-r-4 sm:border-none border-b-slate-500 border-r-slate-500">
+            <div className="text-center grid sm:grid-cols-2 xl:border-b-4 xl:border-r-4 border-0 border-b-slate-500 border-r-slate-500">
               <div className="text-left p-8 bg-red-50 space-y-4">
                 <TypeAnimation
                   preRenderFirstString={true}
@@ -151,7 +151,7 @@ const IndexPage: React.FC<PageProps> = () => {
                     1000,
                   ]}
                 />
-                <div className="flex flex-row gap-4 flex-wrap">
+                <div className="flex flex-row gap-2 flex-wrap">
                   <a
                     href="https://calendly.com/satriahrh/talk"
                     className="block w-fit bg-white border border-b-2 border-r-2 border-black drop-shadow text-gray-800 font-semibold text-sm md:text-base p-2 md:px-4 md:py-2 hover:bg-gray-200"
