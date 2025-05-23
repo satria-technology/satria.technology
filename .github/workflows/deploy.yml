@@ -30,6 +30,7 @@ jobs:
         
     - name: Cache dependencies
       uses: actions/cache@v3
+      id: npm-cache
       with:
         path: |
           ~/.npm
@@ -39,10 +40,17 @@ jobs:
           ${{ runner.os }}-node-
         
     - name: Install dependencies
-      run: npm ci
+      run: |
+        if [[ "${{ steps.npm-cache.outputs.cache-hit }}" == "true" ]]; then
+          echo "✅ Cache hit! Dependencies restored from cache"
+        else
+          echo "❌ Cache miss! Installing dependencies from scratch"
+        fi
+        npm ci
       
     - name: Cache Gatsby build
       uses: actions/cache@v3
+      id: gatsby-cache
       with:
         path: |
           .cache
@@ -55,7 +63,13 @@ jobs:
       run: npm run typecheck
       
     - name: Build site
-      run: npm run build
+      run: |
+        if [[ "${{ steps.gatsby-cache.outputs.cache-hit }}" == "true" ]]; then
+          echo "✅ Gatsby cache hit! Build will be faster"
+        else
+          echo "❌ Gatsby cache miss! Full build required"
+        fi
+        npm run build
       
     - name: Deploy to GitHub Pages
       if: github.ref == 'refs/heads/main'
