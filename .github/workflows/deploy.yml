@@ -43,7 +43,7 @@ jobs:
       run: |
         if [[ "${{ steps.npm-cache.outputs.cache-hit }}" == "true" ]]; then
           echo "✅ Cache hit! Dependencies restored from cache"
-          else
+        else
           echo "❌ Cache miss! Installing dependencies from scratch"
           npm ci
         fi
