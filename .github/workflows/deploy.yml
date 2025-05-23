@@ -43,33 +43,16 @@ jobs:
       run: |
         if [[ "${{ steps.npm-cache.outputs.cache-hit }}" == "true" ]]; then
           echo "✅ Cache hit! Dependencies restored from cache"
-        else
+          else
           echo "❌ Cache miss! Installing dependencies from scratch"
+          npm ci
         fi
-        npm ci
-      
-    - name: Cache Gatsby build
-      uses: actions/cache@v3
-      id: gatsby-cache
-      with:
-        path: |
-          .cache
-          public
-        key: ${{ runner.os }}-gatsby-${{ hashFiles('**/package-lock.json', 'gatsby-config.ts', 'src/**') }}
-        restore-keys: |
-          ${{ runner.os }}-gatsby-
-      
+
     - name: Run type check
       run: npm run typecheck
       
     - name: Build site
-      run: |
-        if [[ "${{ steps.gatsby-cache.outputs.cache-hit }}" == "true" ]]; then
-          echo "✅ Gatsby cache hit! Build will be faster"
-        else
-          echo "❌ Gatsby cache miss! Full build required"
-        fi
-        npm run build
+      run: npm run build
       
     - name: Deploy to GitHub Pages
       if: github.ref == 'refs/heads/main'
