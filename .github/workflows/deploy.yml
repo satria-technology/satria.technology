@@ -47,12 +47,29 @@ jobs:
           echo "❌ Cache miss! Installing dependencies from scratch"
           npm ci
         fi
-
+      
+    - name: Cache Gatsby build
+      uses: actions/cache@v3
+      id: gatsby-cache
+      with:
+        path: |
+          .cache
+          public
+        key: ${{ runner.os }}-gatsby-${{ hashFiles('**/package-lock.json', 'gatsby-config.ts', 'src/**') }}
+        restore-keys: |
+          ${{ runner.os }}-gatsby-
+      
     - name: Run type check
       run: npm run typecheck
       
     - name: Build site
-      run: npm run build
+      run: |
+        if [[ "${{ steps.gatsby-cache.outputs.cache-hit }}" == "true" ]]; then
+          echo "✅ Gatsby cache hit! Build will be faster"
+        else
+          echo "❌ Gatsby cache miss! Full build required"
+          npm run build
+        fi
       
     - name: Deploy to GitHub Pages
       if: github.ref == 'refs/heads/main'
