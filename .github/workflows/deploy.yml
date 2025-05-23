@@ -65,7 +65,7 @@ jobs:
     - name: Build site
       run: |
         if [[ "${{ steps.gatsby-cache.outputs.cache-hit }}" == "true" ]]; then
-          echo "✅ Gatsby cache hit! Build will be faster"
+          echo "✅ Gatsby cache hit! No build required"
         else
           echo "❌ Gatsby cache miss! Full build required"
           npm run build
