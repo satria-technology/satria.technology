@@ -55,11 +55,11 @@ const IndexPage: React.FC<PageProps> = () => {
       </header>
       <div>
         <div className="bg-gradient-to-r from-slate-100 to-red-100 mb-32 md:mb-0">
-          <div className="max-w-screen-lg container mx-auto relative flex flex-col-reverse sm:items-center sm:grid sm:grid-cols-2 sm:gap-4">
+          <div className="max-w-screen-lg container mx-auto flex flex-col-reverse justify-center sm:items-center sm:grid sm:grid-cols-2 gap-12 sm:gap-4 min-h-[80vh]">
             <div
-              className="absolute sm:relative bg-white sm:bg-transparent h-fit
+              className="bg-white sm:bg-transparent h-fit
 						border-l-2 border-t-2 border-b-4 border-r-4 sm:border-none border-b-slate-500 border-r-slate-500
-						-bottom-28 sm:bottom-0 p-4 md:py-0 md:px-4 space-y-2 z-10"
+						p-4 md:py-0 md:px-4 space-y-2 z-10"
             >
               <div className="space-y-2">
                 <p className="text-2xl md:text-4xl">
@@ -115,9 +115,10 @@ const IndexPage: React.FC<PageProps> = () => {
               </div>
             </div>
             <StaticImage
-              src="../images/asian-man-saying-good-job.webp"
+              src="../images/profile-picture-transparant.webp"
               placeholder="blurred"
               alt="Stock Photo"
+              className="rounded-full w-64 h-64 md:w-80 md:h-80 mx-auto border-l-2 border-b-4 border-slate-400"
             />
           </div>
         </div>
