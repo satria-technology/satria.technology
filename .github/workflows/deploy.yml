@@ -28,17 +28,51 @@ jobs:
         node-version: '20'
         cache: 'npm'
         
+    - name: Cache dependencies
+      uses: actions/cache@v3
+      id: npm-cache
+      with:
+        path: |
+          ~/.npm
+          node_modules
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+        
     - name: Install dependencies
-      run: npm ci
+      run: |
+        if [[ "${{ steps.npm-cache.outputs.cache-hit }}" == "true" ]]; then
+          echo "✅ Cache hit! Dependencies restored from cache"
+        else
+          echo "❌ Cache miss! Installing dependencies from scratch"
+          npm ci
+        fi
+      
+    - name: Cache Gatsby build
+      uses: actions/cache@v3
+      id: gatsby-cache
+      with:
+        path: |
+          .cache
+          public
+        key: ${{ runner.os }}-gatsby-${{ hashFiles('**/package-lock.json', 'gatsby-config.ts', 'src/**') }}
+        restore-keys: |
+          ${{ runner.os }}-gatsby-
       
     - name: Run type check
       run: npm run typecheck
       
     - name: Build site
-      run: npm run build
+      run: |
+        if [[ "${{ steps.gatsby-cache.outputs.cache-hit }}" == "true" ]]; then
+          echo "✅ Gatsby cache hit! No build required"
+        else
+          echo "❌ Gatsby cache miss! Full build required"
+          npm run build
+        fi
       
     - name: Deploy to GitHub Pages
-    #   if: github.ref == 'refs/heads/main'
+      if: github.ref == 'refs/heads/main'
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
